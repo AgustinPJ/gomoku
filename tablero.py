@@ -13,20 +13,3 @@ class Tablero:
               return True 
          else: 
               return False
-    def tablero_lleno(self):
-        lleno = True
-        for fila in range(self.dimension):
-            for columna in range(self.dimension):
-                if self.grilla[fila][columna] == None:
-                    lleno = False
-        return lleno
- 
-    def imprimir(self):
-        for fila in self.grilla:
-            linea = ""
-            for celda in fila:
-                if celda == None:
-                    linea = linea + "· "
-                else:
-                    linea = linea + celda + " "
-            print(linea)
