@@ -8,7 +8,7 @@ class Tablero:
     def esta_vacia(self, fila:int , columna: int):
            return self.esta_en_rango(fila,columna) and self.grilla[fila][columna] is None
     def colocar_ficha(self, fila:int,columna:int,turno:str):
-         if self.esta_vacia(fila,columna) == True:
+         if self.esta_vacia(fila,columna):
               self.grilla[fila][columna] = turno
               return True 
          else: 
