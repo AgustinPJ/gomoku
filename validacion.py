@@ -59,3 +59,11 @@ class validador:
             else:
                 break
         return False
+    def verificar_ganador(self,tablero,fila:int,columna:int,turno:str):
+        return (self.verificar_fila(tablero,fila,turno) 
+                or self.verificar_columna(tablero,columna,turno) 
+                or self.verificar_diagonal_negativa(tablero,fila,columna,turno) 
+                or self.verificar_diagonal_positiva(tablero,fila,columna,turno))
+    
+    def verificar_empate(self,tablero,turnos_jugados:int):
+        return turnos_jugados == tablero.dimension * tablero.dimension
