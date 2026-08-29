@@ -1,13 +1,13 @@
 from tablero import Tablero
 from validacion import validador
 class Juego:
-    def __init__(self,dimension:int):
+    def __init__(self,dimension:int): # inicia el juego
         self.tablero =  Tablero(dimension)
         self.validador = validador()
         self.turno = "A"
         self.turnos_jugados = 0
         self.estado = "jugando"
-    def jugada(self,fila:int,columna:int):
+    def jugada(self,fila:int,columna:int): # evalua si la jugada es valida y el estado de la partida
         if self.estado!= "jugando":
             return (False,"la partida ya finalizo")
         if self.tablero.colocar_ficha(fila,columna,self.turno):
